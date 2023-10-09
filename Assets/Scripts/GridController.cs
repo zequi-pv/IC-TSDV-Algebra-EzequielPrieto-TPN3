@@ -14,7 +14,17 @@ public class GridController : MonoBehaviour
     {
         vectors = new Vector3[width + 1, height + 1, depth + 1];
 
+        GameObject IcoSphere = GameObject.Find("IcoSphere");
 
+        GameObject tetracontaedro = GameObject.Find("tetracontaedro");
+
+        GetFace(IcoSphere);
+        GetFace(tetracontaedro);
+
+        //Vector3 objectCenter1 = IcoSphere.GetComponent<Renderer>().bounds.center;
+
+        //Vector3 objectCenter2 = tetracontaedro.GetComponent<Renderer>().bounds.center;
+        
         for (int i = 0; i <= height; i++)
         {
             for (int j = 0; j <= depth; j++)
@@ -43,6 +53,12 @@ public class GridController : MonoBehaviour
         }
     }
 
-
+    private void GetFace(GameObject figure) //Not sure if works
+    {
+        foreach (Transform face in figure.transform)
+        {
+            face.position = Vector3.up;
+        }
+    }
 
 }
