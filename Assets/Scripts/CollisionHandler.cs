@@ -51,13 +51,10 @@ public class CollisionHandler : MonoBehaviour
     bool CheckPointInsideFigure(GameObject figure, int i, int j, int k)
     {
         int facesQty = figure.GetComponent<MeshFilter>().mesh.vertices.Length / 3;
-        int normalInside = 0;
         for (int faceIndex = 0; faceIndex <= figure.GetComponent<Figure>().vertices.Count - 3; faceIndex += 3)
         {
             if (figure.GetComponent<Figure>().IsPointInside(grid.points[k, i, j], faceIndex))
             {
-
-                normalInside++;
                 //Debug.Log("ATRODEN" + faceIndex);
             }
             else

@@ -6,14 +6,13 @@ public class Figure : MonoBehaviour
 {
     public List<Vector3> vertices = new List<Vector3>();
 
-    public int[] faces;
 
     [SerializeField] float speed;
 
     void Update()
     {
         GetVertices();
-        GetFaces();
+        //GetFaces();
 
         if (Input.GetKey(KeyCode.W))
         {
@@ -66,10 +65,10 @@ public class Figure : MonoBehaviour
         }
     }
 
-    void GetFaces()
-    {
-        faces = GetComponent<MeshFilter>().mesh.triangles;
-    }
+    //void GetFaces()
+    //{
+    //    faces = GetComponent<MeshFilter>().mesh.triangles;
+    //}
 
     Vector3 GetFacePoint(int faceIndex)
     {
